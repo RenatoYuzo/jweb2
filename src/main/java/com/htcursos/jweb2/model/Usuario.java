@@ -1,6 +1,7 @@
 package com.htcursos.jweb2.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Usuario {
@@ -10,6 +11,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 
+	@Id
 	public Integer getId() {
 		return id;
 	}
