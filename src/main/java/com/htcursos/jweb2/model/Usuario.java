@@ -1,9 +1,12 @@
 package com.htcursos.jweb2.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
-@Entity
+@Entity(name="usuario")
 public class Usuario {
 
 	private Integer id;
@@ -12,6 +15,8 @@ public class Usuario {
 	private String senha;
 
 	@Id
+	@SequenceGenerator(name="usuario_seq_hibernate", sequenceName="usuario_seq_BancoDados", initialValue=1000)
+	@GeneratedValue(generator="usuario_seq_hibernate", strategy=GenerationType.AUTO)
 	public Integer getId() {
 		return id;
 	}

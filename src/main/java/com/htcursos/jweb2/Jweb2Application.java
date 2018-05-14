@@ -6,15 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+//@Controller
 @SpringBootApplication
 public class Jweb2Application {
 	
-	@RequestMapping("/")
+	/*@RequestMapping("/")
     @ResponseBody
     String home() {
         return "Hello World!";
-    }
+    }*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(Jweb2Application.class, args);
