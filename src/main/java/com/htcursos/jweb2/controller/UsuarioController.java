@@ -2,9 +2,9 @@ package com.htcursos.jweb2.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,19 +22,23 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping("/usuarios")
 	public List<Usuario> buscarTodos() {
 		return usuarioRepository.findAll();
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/usuarios")
-	public void cadastrar(@RequestBody Usuario usuario) {
+	public String cadastrar(@RequestBody Usuario usuario) {
 		usuarioRepository.save(usuario);
+		return "Usuario Salvo";
 	}
 	
 	@PutMapping("/usuarios")
-	public void alterar(@RequestBody Usuario usuario) {
+	public String alterar(@RequestBody Usuario usuario) {
 		usuarioRepository.save(usuario);
+		return "Usuario Atualizado";
 	}
 	
 	@DeleteMapping("/usuarios/{id}")

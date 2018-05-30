@@ -6,17 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity(name="usuario")
+@Entity
 public class Usuario {
-
-	private Integer id;
-	private String nome;
-	private String email;
-	private String senha;
 
 	@Id
 	@SequenceGenerator(name="usuario_seq_hibernate", sequenceName="usuario_seq_BancoDados", initialValue=1000)
 	@GeneratedValue(generator="usuario_seq_hibernate", strategy=GenerationType.AUTO)
+	private Integer id;
+	private String nome;
+	private String email;
+	private String senha;
+	
 	public Integer getId() {
 		return id;
 	}
